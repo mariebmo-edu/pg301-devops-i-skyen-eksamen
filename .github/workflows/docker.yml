@@ -22,4 +22,4 @@ jobs:
           rev=$(git rev-parse --short HEAD)
           docker build . -t eksamen
           docker tag eksamen 244530008913.dkr.ecr.eu-west-1.amazonaws.com/knr1027:$rev
-          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/1027:$rev
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/knr1027:$rev
