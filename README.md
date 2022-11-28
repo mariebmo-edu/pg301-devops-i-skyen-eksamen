@@ -79,6 +79,15 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 ## Del 4 - Metrics
 
 ### Oppgave 1
+- [x] Legg til Metrics i pom.xml
+- [x] Legg config for Metrics i MetricsConfig
+
+### Oppgave 2
+- [x] Legg til Metrics i ShoppingCartController
+- [x] Lag Metrics for carts (antall på et gitt tidspunkt)
+- [x] Lag Metrics for totalsummen av items i alle carts (sum på et gitt tidspunkt)
+- [x] Lag Metrics for antall checkouts (totalt antall checkouts)
+- [ ] Lag Metrics for latency på checkouts
 
 ## Krav til leveransen
 
