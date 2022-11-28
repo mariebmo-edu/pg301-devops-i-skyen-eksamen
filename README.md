@@ -20,6 +20,37 @@
 
 ### 4️⃣ Hvordan DevOps-prinsipper kan redusere risiko ved release
 
+## Del 2 - CI
+
+### Oppgave 1
+- [x] Workflow kjører når man lager en pull-request, og på push til main
+
+### Oppgave 2
+- [x] ci.yml feiler når testene feiler
+- [x] testen kjører grønt
+- [x] workflowen kjøres på hver push uavhengig av branch
+
+### Oppgave 3
+
+#### Hvordan konfigurere fork for branch-protection & status-sjekk
+- [ ] Gå inn på "settings"
+- [ ] Gå til "branches"
+- [ ] Velg "add branch protection rule"
+- [ ] På "Branch name pattern" skriver du inn "main" (navnet på branchen reglene gjelder for)
+- [ ] Huk av for "Require pull request reviews before merging"
+- [ ] Huk av for "Require status checks to pass before merging"
+
+## Del 3 - Docker
+
+### Oppgave 1
+For å få en workflow til å fungere med Dockerhub må man
+
+- [x] Gå inn på "settings"
+- [x] Gå inn på "secrets"
+- [x] Gå inn på "actions"
+- [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_USERNAME, secret = ditt brukernavn på Dockerhub
+- [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_TOKEN, secret = ditt passord på Dockerhub
+
 
 ## Krav til leveransen
 
