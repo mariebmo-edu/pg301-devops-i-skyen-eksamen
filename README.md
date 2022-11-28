@@ -48,8 +48,8 @@ For å få en workflow til å fungere med Dockerhub må man
 - [x] Gå inn på "settings"
 - [x] Gå inn på "secrets"
 - [x] Gå inn på "actions"
-- [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_USERNAME, secret = ditt brukernavn på Dockerhub
-- [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_TOKEN, secret = ditt passord på Dockerhub
+- [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_USERNAME, secret = \<ditt brukernavn på Dockerhub>
+- [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_TOKEN, secret = \<ditt passord på Dockerhub>
 
 ### Oppgave 2
 - [x] Lag en container for maven
@@ -71,8 +71,8 @@ For å få en workflow til å fungere med Dockerhub må man
 - [ ] Velg "Security credentials"
 - [ ] Trykk på "Create access key"
 - [ ] På Github, legg til nye secrets på samme måte som i oppgave 1, basert på access key og secret access key fra AWS IAM
-- [ ] Trykk på "new repository secret", legg inn name = AWS_ACCESS_KEY_ID, secret = Access key ID
-- [ ] Trykk på "new repository secret", legg inn name = AWS_SECRET_ACCESS_KEY, secret = Secret access key
+- [ ] Trykk på "new repository secret", legg inn name = AWS_ACCESS_KEY_ID, secret = \<Access key ID>
+- [ ] Trykk på "new repository secret", legg inn name = AWS_SECRET_ACCESS_KEY, secret = \<Secret access key>
 
 ## Krav til leveransen
 
