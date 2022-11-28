@@ -20,5 +20,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package --file pom.xml
+        run: mvn --no-transfer-progress -B package -DskipTests --file pom.xml
 
+      - name: Run tests
+        run: mvn --batch-mode --update-snapshots test --file pom.xml
