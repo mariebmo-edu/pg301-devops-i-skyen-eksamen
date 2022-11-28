@@ -72,7 +72,7 @@ For å få en workflow til å fungere med Dockerhub må man
 - [ ] Trykk på "Create access key"
 - [ ] På Github, legg til nye secrets på samme måte som i oppgave 1, basert på access key og secret access key fra AWS IAM
 - [ ] Trykk på "new repository secret", legg inn name = AWS_ACCESS_KEY_ID, secret = \<Access key ID>
-- [ ] Trykk på "new repository secret", legg inn name = AWS_SECRET_ACCESS_KEY, secret = \<Secret access key>
+- [ ] Trykk på "new repository secret", legg inn name = AWS_SECRET_ACCESS_KEY, secret = \<Secret access key> 
 
 ## Krav til leveransen
 
