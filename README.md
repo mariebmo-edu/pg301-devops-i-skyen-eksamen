@@ -1,5 +1,26 @@
 # DevOps med gode intensjoner
 
+## Del 1 - Drøftingsoppgaver
+
+### Ordbok
+
+| Ordbok                                     | Forkortelse | Eksempel |
+|--------------------------------------------|-------------|----------|
+| Single Piece Flow                          |             |          |
+| Continuous Integration/Continuous Delivery | CI/CD       |          | 
+| Waste/Lean                                 |             |          |
+  
+
+
+### 1️⃣ Utfordringer med dagens systemutviklingsprosess
+
+### 2️⃣ Problemet med ferre utgivelser og mer kontroll
+
+### 3️⃣ Problemet med overlevering av kode
+
+### 4️⃣ Hvordan DevOps-prinsipper kan redusere risiko ved release
+
+
 ## Krav til leveransen
 
 * Eksamensoppgaven er gitt på GitHub repository ; https://github.com/PGR301-2022/eksamen_2022
