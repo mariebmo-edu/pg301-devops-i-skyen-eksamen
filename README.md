@@ -87,7 +87,7 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 - [x] Lag Metrics for carts (antall på et gitt tidspunkt)
 - [x] Lag Metrics for totalsummen av items i alle carts (sum på et gitt tidspunkt)
 - [x] Lag Metrics for antall checkouts (totalt antall checkouts)
-- [x] Lag Metrics for latency på checkouts
+- [ ] Lag Metrics for latency på checkouts
 
 ## Del 5 - Terraform & CloudWatch Dashboards
 
