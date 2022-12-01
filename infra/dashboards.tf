@@ -14,7 +14,47 @@ resource "aws_cloudwatch_dashboard" "main" {
         "metrics": [
           [
             "knr${var.candidate_id}",
-            "account_count.value"
+            "carts.value"
+          ]
+        ],
+        "period": 300,
+        "stat": "Maximum",
+        "region": "eu-west-1",
+        "title": "Total number of carts"
+      }
+    },
+
+    {
+      "type": "metric",
+      "x": 1,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [
+            "knr${var.candidate_id}",
+            "carts_value.value"
+          ]
+        ],
+        "period": 300,
+        "stat": "Maximum",
+        "region": "eu-west-1",
+        "title": "Total value of carts"
+      }
+    },
+
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [
+            "knr${var.candidate_id}",
+            "checkouts.value"
           ]
         ],
         "period": 300,
@@ -34,47 +74,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "metrics": [
           [
             "knr${var.candidate_id}",
-            "account_count.value"
-          ]
-        ],
-        "period": 300,
-        "stat": "Maximum",
-        "region": "eu-west-1",
-        "title": "Total number of carts"
-      }
-    },
-
-    {
-      "type": "metric",
-      "x": 0,
-      "y": 0,
-      "width": 12,
-      "height": 6,
-      "properties": {
-        "metrics": [
-          [
-            "knr${var.candidate_id}",
-            "account_count.value"
-          ]
-        ],
-        "period": 300,
-        "stat": "Maximum",
-        "region": "eu-west-1",
-        "title": "Total number of carts"
-      }
-    },
-
-    {
-      "type": "metric",
-      "x": 0,
-      "y": 0,
-      "width": 12,
-      "height": 6,
-      "properties": {
-        "metrics": [
-          [
-            "knr${var.candidate_id}",
-            "account_count.value"
+            "no.shoppifly.ShoppingCartController.method.timed.avg"
           ]
         ],
         "period": 300,
