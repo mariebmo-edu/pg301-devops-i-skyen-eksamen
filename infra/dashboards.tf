@@ -20,7 +20,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "Total number of carts"
+        "title": "Current number of carts"
       }
     },
 
@@ -40,7 +40,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "Total value of carts"
+        "title": "Current value of carts"
       }
     },
 
@@ -60,7 +60,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "Total number of carts"
+        "title": "Total number of checkouts"
       }
     },
 
@@ -80,7 +80,7 @@ resource "aws_cloudwatch_dashboard" "main" {
         "period": 300,
         "stat": "Maximum",
         "region": "eu-west-1",
-        "title": "Total number of carts"
+        "title": "Average latency of checkouts"
       }
     }
   ]
