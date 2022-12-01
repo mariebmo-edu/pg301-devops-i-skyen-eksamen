@@ -7,8 +7,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "analytics-1027"
-    key = "knr1027/analytics-1027.state"
+    bucket = "knr1027-terraform-state"
+    key = "knr1027/knr1027-terraform.state"
     region = "eu-west-1"
   }
 

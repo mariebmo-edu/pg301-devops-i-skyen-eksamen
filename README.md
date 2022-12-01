@@ -94,13 +94,14 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 ### Oppgave 1
 
 #### Hvorfor prøver Terraform å opprette ny bucket?
-Det var ikke laget en "backend" i provider.tf, som gjør at Terraform ikke vet hvor den skal lagre state-filen. Dette gjør at den prøver å opprette en ny bucket, da den ikke vet at den eksisterer.
-Vi kan komme rundt dette problemet ved å si hvor man skal lagre state-filen, ved å legge til "backend" i provider.tf.
+Problemet er at man bruker s3 som en resource i steden for å benytte det som en backend - som gjør at den prøver å opprette den som ny ressurs.
+For at Terraform skal vite status (state) på applikasjonen, så lages det en state-file som sier om ressurser er opprettet, 
+eller om man må opprette nye ressurser. Siden bucketen ikke eksisterte, hadde ikke terraform noen informasjon om bucketen var opprettet eller ei.
+Terraform prøvde derfor å opprette denne ressursen, som igjen gjorde at feilmeldingen om allerede eksisterende bucket dukket opp.
+Ved å flytte s3 fra ressurs til backend, så kan terraform nå lagre og lese state-filen i bucketen, og dermed vite status på applikasjonen.
 
-Siden s3-bucketen man ønsker å benytte tar inn en input i navnet, så kan ikke Github Actions benytte riktig bucket.
-For å passe på at github actions benytter riktig bucket, kan man enten
-- gi default-verdi til candidate_id i variables.tf
-- hardkode navnet til analyticsbucket i databucket.tf
+`//TODO: Skal man fjerne tf eller ikke?`
+
 
 ## Krav til leveransen
 
