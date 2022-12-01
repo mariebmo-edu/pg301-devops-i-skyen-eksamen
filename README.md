@@ -94,8 +94,8 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 ### Oppgave 1
 
 #### Hvorfor prøver Terraform å opprette ny bucket?
-Det var ikke laget en "backend"-variabel i provider.tf, som gjør at Terraform ikke vet hvor den skal lagre state-filen. Dette gjør at den prøver å opprette en ny bucket, da den ikke vet at den eksisterer.
-Vi kan komme rundt dette problemet ved å si hvor man skal lagre state-filen, ved å legge til en "backend"-variabel i provider.tf.
+Det var ikke laget en "backend" i provider.tf, som gjør at Terraform ikke vet hvor den skal lagre state-filen. Dette gjør at den prøver å opprette en ny bucket, da den ikke vet at den eksisterer.
+Vi kan komme rundt dette problemet ved å si hvor man skal lagre state-filen, ved å legge til "backend" i provider.tf.
 
 Siden s3-bucketen man ønsker å benytte tar inn en input i navnet, så kan ikke Github Actions benytte riktig bucket.
 For å passe på at github actions benytter riktig bucket, kan man enten
