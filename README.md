@@ -94,7 +94,11 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 ### Oppgave 1
 
 #### Hvorfor prøver Terraform å opprette ny bucket?
-
+AWS s3-buckets blir laget på et globalt scope, som vil si at hver bucket må ha et helt unikt navn, ikke bare internt, men på alle plan.
+Siden feilmeldingen benytter "BuckedAlreadyOwnedByYou" kan vi se at Shopifly allerde har en bucket med dette navnet, og når Terraform prøver å opprette en ny, vil det feile.
+Grunnen til at denne feilmeldingen skjer, er at bucketen er opprettet, men Terrform ikke er klar over at den eksisterer, og prøver å opprette ny.
+Ved å oppdatere staten til Terraform, slik at den blir klar over eksistensen til bucketen, kan man fikse problemet.
+Dette gjøres enten ved å skrive `terraform import` eller ved å slette bucketen og kjøre `terraform apply` på nytt.
 
 ## Krav til leveransen
 
