@@ -6,4 +6,10 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket = "analytics-${var.candidate_id}"
+    key = "knr1027/cloudwatch-alarm.state"
+    region = "eu-west-1"
+  }
+
 }
