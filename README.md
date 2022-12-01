@@ -94,14 +94,13 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 ### Oppgave 1
 
 #### Hvorfor prøver Terraform å opprette ny bucket?
-Problemet er at man bruker s3 som en resource i steden for å benytte det som en backend - som gjør at den prøver å opprette den som ny ressurs.
-For at Terraform skal vite status (state) på applikasjonen, så lages det en state-file som sier om ressurser er opprettet, 
-eller om man må opprette nye ressurser. Siden bucketen ikke eksisterte, hadde ikke terraform noen informasjon om bucketen var opprettet eller ei.
-Terraform prøvde derfor å opprette denne ressursen, som igjen gjorde at feilmeldingen om allerede eksisterende bucket dukket opp.
-Ved å flytte s3 fra ressurs til backend, så kan terraform nå lagre og lese state-filen i bucketen, og dermed vite status på applikasjonen.
 
-`//TODO: Skal man fjerne tf eller ikke?`
+Terraform lagrer en "state" som informerer om hvilke ressurser som eksisterer. Hvis en ressurs ikke eksisterer, må den lages. 
+For at terraform skal finne analyse-bucketen, må man lage en "backend" som lagrer state-filen i en eksisterende bucket, slik at terraform vet at ressursen finnes.
+Ved å legge til en **backend** i provider.tf, vil terraform vite at det allerede eksisterer en analyse-s3-ressurs, og benytte denne i steden for å opprette ny.
 
+### Oppgave 2
+- [x] Kun kjør Terraform apply på push til main
 
 ## Krav til leveransen
 

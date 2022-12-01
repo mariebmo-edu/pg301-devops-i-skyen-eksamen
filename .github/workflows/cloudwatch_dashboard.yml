@@ -33,3 +33,4 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -var="candidate_id=$CANDIDATE_ID" -var="candidate_email=$CANDIDATE_EMAIL"  -auto-approve
+        if: github.event_name == 'push'
