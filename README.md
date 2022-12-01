@@ -94,6 +94,11 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 ### Oppgave 1
 
 #### Hvorfor prøver Terraform å opprette ny bucket?
+Siden s3-bucketen man ønsker å benytte tar inn en input i navnet, så kan ikke Github Actions benytte riktig bucket.
+For å passe på at github actions benytter riktig bucket, kan man enten
+- gi default-verdi til candidate_id i variables.tf
+- hardkode navnet til analyticsbucket i databucket.tf
+
 AWS s3-buckets blir laget på et globalt scope, som vil si at hver bucket må ha et helt unikt navn, ikke bare internt, men på alle plan.
 Siden feilmeldingen benytter "BuckedAlreadyOwnedByYou" kan vi se at Shopifly allerde har en bucket med dette navnet, og når Terraform prøver å opprette en ny, vil det feile.
 Grunnen til at denne feilmeldingen skjer, er at bucketen er opprettet, men Terrform ikke er klar over at den eksisterer, og prøver å opprette ny.
