@@ -87,7 +87,7 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 - [x] Lag Metrics for carts (antall på et gitt tidspunkt)
 - [x] Lag Metrics for totalsummen av items i alle carts (sum på et gitt tidspunkt)
 - [x] Lag Metrics for antall checkouts (totalt antall checkouts)
-- [ ] Lag Metrics for latency på checkouts
+- [x] Lag Metrics for latency på checkouts
 
 ## Del 5 - Terraform & CloudWatch Dashboards
 
@@ -101,6 +101,14 @@ Ved å legge til en **backend** i provider.tf, vil terraform vite at det allered
 
 ### Oppgave 2
 - [x] Kun kjør Terraform apply på push til main
+
+### Oppgave 3
+- [x] Opprett CloudWatch dashboard med metrics fra oppgave 2
+  - [x] Carts
+  - [x] Total sum
+  - [x] Checkouts
+  - [x] Latency
+- [ ] Legg til alarm hvis antall handlekurver er over 5 over tre perioder på 5 minutter
 
 ## Krav til leveransen
 
