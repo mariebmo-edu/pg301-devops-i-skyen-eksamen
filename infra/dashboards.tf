@@ -54,11 +54,11 @@ resource "aws_cloudwatch_dashboard" "main" {
         "metrics": [
           [
             "knr${var.candidate_id}",
-            "checkouts.value"
+            "checkouts.count"
           ]
         ],
         "period": 300,
-        "stat": "Maximum",
+        "stat": "Count",
         "region": "eu-west-1",
         "title": "Total number of checkouts"
       }
@@ -78,7 +78,7 @@ resource "aws_cloudwatch_dashboard" "main" {
           ]
         ],
         "period": 300,
-        "stat": "Maximum",
+        "stat": "Average",
         "region": "eu-west-1",
         "title": "Average latency of checkouts"
       }
