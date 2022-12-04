@@ -39,6 +39,7 @@
 - [ ] På "Branch name pattern" skriver du inn "main" (navnet på branchen reglene gjelder for)
 - [ ] Huk av for "Require pull request reviews before merging"
 - [ ] Huk av for "Require status checks to pass before merging"
+![img_2.png](img_2.png)
 
 ## Del 3 - Docker
 
@@ -50,6 +51,7 @@ For å få en workflow til å fungere med Dockerhub må man
 - [x] Gå inn på "actions"
 - [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_USERNAME, secret = \<ditt brukernavn på Dockerhub>
 - [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_TOKEN, secret = \<ditt passord på Dockerhub>
+![img_3.png](img_3.png)
 
 ### Oppgave 2
 - [x] Lag en container for maven
