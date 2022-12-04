@@ -13,7 +13,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.candidate_id}",
+            "knr${var.candidate_id}",
             "carts.value"
           ]
         ],
@@ -33,7 +33,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.candidate_id}",
+            "knr${var.candidate_id}",
             "carts_value.value"
           ]
         ],
@@ -53,7 +53,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.candidate_id}",
+            "knr${var.candidate_id}",
             "checkouts.count"
           ]
         ],
@@ -73,7 +73,7 @@ resource "aws_cloudwatch_dashboard" "main" {
       "properties": {
         "metrics": [
           [
-            "${var.candidate_id}",
+            "knr${var.candidate_id}",
             "checkout_time.avg", "exception", "none", "method", "checkout", "class", "no.shoppifly.ShoppingCartController"
           ]
         ],
