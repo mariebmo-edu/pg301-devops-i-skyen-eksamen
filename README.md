@@ -101,6 +101,7 @@ Inne på ECR-repoet er det også en knapp "View push commands", med kommandoer s
 Terraform lagrer en "state" som informerer om hvilke ressurser som eksisterer. Hvis en ressurs ikke eksisterer, må den lages. 
 For at terraform skal finne analyse-bucketen, må man lage en "backend" som lagrer state-filen i en eksisterende bucket, slik at terraform vet at ressursen finnes.
 Ved å legge til en **backend** i provider.tf, vil terraform vite at det allerede eksisterer en analyse-s3-ressurs, og benytte denne i steden for å opprette ny.
+Jeg har gjort dette ved å opprette en egen s3-bucket som heter "1027-terraform-state", som lagrer state-filen til terraform.
 
 ### Oppgave 2
 - [x] Kun kjør Terraform apply på push til main
