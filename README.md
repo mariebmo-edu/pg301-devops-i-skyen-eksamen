@@ -63,7 +63,10 @@ For å få en workflow til å fungere med Dockerhub må man
 - [ ] Gå inn på AWS-miljøet (det som er benyttet for oppgaven er https://244530008913.signin.aws.amazon.com/console)
 - [ ] Gå inn på "ECR"
 - [ ] Trykk på "Create repository"
-- [ ] Når ECR er opprettet, bytt ut path i docker.yml med repository-urlen til ECR - denne står under "View push commands" i ECR 
+- [ ] Når ECR er opprettet, bytt ut path i docker.yml med repository-urlen til ECR - denne står under "View push commands" i ECR, eller i URI-feltet i ECR
+![img_1.png](img_1.png)
+![img.png](img.png)
+
 - [ ] Endre tag-navnet til noe passende.
 - [ ] Gå inn på "IAM"
 - [ ] Gå inn på "Users"
