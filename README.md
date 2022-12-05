@@ -174,8 +174,8 @@ Jeg har gjort dette ved å opprette en egen s3-bucket som heter "1027-terraform-
   - [x] Checkouts
   - [x] Latency
 - [x] Legg til alarm hvis antall handlekurver er over 5 over tre perioder på 5 minutter
-![img_4.png](readmeimg/img_4.png)
-![img_3.png](readmeimg/img_5.png)
+![img.png](readmeimg/img_4.png)
+![img_1.png](readmeimg/img_5.png)
 
 ---
 
