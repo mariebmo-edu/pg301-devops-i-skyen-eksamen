@@ -5,6 +5,11 @@
 
 # Besvarelse
 
+[![CI pipeline](https://github.com/mariestigen-edu/pg301-devops-i-skyen-eksamen/actions/workflows/ci.yml/badge.svg)](https://github.com/mariestigen-edu/pg301-devops-i-skyen-eksamen/actions/workflows/ci.yml)
+[![Docker build](https://github.com/mariestigen-edu/pg301-devops-i-skyen-eksamen/actions/workflows/docker.yml/badge.svg)](https://github.com/mariestigen-edu/pg301-devops-i-skyen-eksamen/actions/workflows/docker.yml)
+[![Terraform CloudWatch](https://github.com/mariestigen-edu/pg301-devops-i-skyen-eksamen/actions/workflows/cloudwatch_dashboard.yml/badge.svg)](https://github.com/mariestigen-edu/pg301-devops-i-skyen-eksamen/actions/workflows/cloudwatch_dashboard.yml)
+
+
 ## Del 1 - Drøftingsoppgaver
 
 _Ser at jeg svarte på store deler av oppgave 2, 3, og 4 som en del av oppgave 1. Jeg har derfor bare oppsummert de mest relevante tingene per oppgave på de andre punktene_
