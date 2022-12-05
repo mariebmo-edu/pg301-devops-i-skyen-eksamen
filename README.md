@@ -40,7 +40,9 @@ _Ser at jeg svarte på store deler av oppgave 2, 3, og 4 som en del av oppgave 1
 
 ### 1️⃣ Utfordringer med dagens systemutviklingsprosess
 _Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?_
-Shopifly har en systemutviklingsprosess som ikke implementerer så mange DevOps-prinsipper. De har startet å implementere noen elementer ved å benytte Terraform og Docker, men bare fordi de har begynt å implementere noen verktøy betyr ikke det at de kjører “DevOps”.
+Shopifly har en systemutviklingsprosess som ikke implementerer så mange DevOps-prinsipper. 
+
+De har startet å implementere noen elementer ved å benytte Terraform og Docker, men bare fordi de har begynt å implementere noen verktøy betyr ikke det at de kjører “DevOps”.
 
 En av hovedpunktene i DevOps er at man samler utvikling og ops-avdelingen, til en DevOps-avdeling, der utviklerne holder i hele prosessen fra start til slutt - og opprettholdelse. Mye av denne prosessen kan - og bør - selvfølgelig automatiseres for å gjøre jobben bedre og enklere for alle.
 
