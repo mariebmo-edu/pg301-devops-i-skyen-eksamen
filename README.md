@@ -1,24 +1,83 @@
+---
 # DevOps med gode intensjoner
+
+---
+
+# Besvarelse
 
 ## Del 1 - Drøftingsoppgaver
 
+_Ser at jeg svarte på store deler av oppgave 2, 3, og 4 som en del av oppgave 1. Jeg har derfor bare oppsummert de mest relevante tingene per oppgave på de andre punktene_
+
+
 ### Ordbok
 
-| Ordbok                                     | Forkortelse | Eksempel |
-|--------------------------------------------|-------------|----------|
-| Single Piece Flow                          |             |          |
-| Continuous Integration/Continuous Delivery | CI/CD       |          | 
-| Waste/Lean                                 |             |          |
-  
+| **ORD**                    | **BESKRIVELSE**                                                                                                                                                                                                                                                                                                                                                   |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **DevOps**                 | DevOps er en kultur som kombinerer utvikling og drift, og som har som mål å optimalisere hastigheten av leveranse av verdi til kunden                                                                                                                                                                                                                             |
+| **Flow**                   | Flow - eller flyt - handler om arbeidsflyten. Målet er at man kutter ned på waste, og benytter verktøy for å forbedre prosessen                                                                                                                                                                                                                                   |        
+| **Waste**                  | Waste er unødvendige arbeidsoppgaver eller bruk av tid som kan og bør elimineres fra en prosess                                                                                                                                                                                                                                                                   |          
+| **Lean**                   | Lean er når man har fjernet så mye waste som mulig, og jobber optimalt.                                                                                                                                                                                                                                                                                           |
+| **CI**                     | Continuous Integration - Kombinasjonen av prinsipper, verktøy, og arbeidsmetoder for å optimalisere hastigheten av intern leveranse                                                                                                                                                                                                                               |
+| **CD**                     | Continuous Delivery - Kombinasjonen av prinsipper, verktøy, og arbeidsmetoder for å optimalisere hastigheten av ekstern leveranse                                                                                                                                                                                                                                 |
+| **Infrastructure as code** | Infrastructure as code - Konsept for å skrive kode for å opprette infrastruktur.                                                                                                                                                                                                                                                                                  |                                                                   |                                                                                                                                                |
+| **Docker**                 | Docker er et verktøy som lar deg pakke inn applikasjoner i en container, som igjen kan kjøres eller deles med andre                                                                                                                                                                                                                                               |
+| **Docker Container**       | Docker Container er en instans som kjører programmet eller verktøyet den blir instruert til å kjøre. Dette kan f.eks være en tjeneste eller en database.                                                                                                                                                                                                          |
+| **Docker Image**           | Docker Image er en fil som inneholder instruksjoner for å sette opp Docker Containers, og hvordan de henger sammen.                                                                                                                                                                                                                                               |
+| **Terraform**              | Terraform er et "infrastruktur som kode"-verktøy som lar deg definere et oppsett av infrastruktur, og deretter opprette det.                                                                                                                                                                                                                                      |
+| **Git**                    | Git er et verktøy for å holde styr på endringer i kildekode, og som lar deg dele endringer med andre                                                                                                                                                                                                                                                              |
+| **GitHub**                 | GitHub er en tjeneste som lar deg lagre kildekode i Git, og dele den med andre.                                                                                                                                                                                                                                                                                   |
+| **GitHub Actions**         | GitHub Actions er en tjeneste i GitHub som lar deg kjøre automatiserte oppgaver, som f.eks bygging av infrastruktur, kjøring av tester, eller deployment                                                                                                                                                                                                          |
+| **AWS**                    | AWS er en skyplattform fra Amazon, som tilbyr et stort utvalg av tjenester som gjør det enkelt å lagre, dele, og kjøre kode i skyen.                                                                                                                                                                                                                              |
+| **Feature Toggles**        | Feature Toggles er en funksjon som lar deg slå av og på funksjonalitet i en live applikasjon.                                                                                                                                                                                                                                                                     |
+| **Blue/Green Deployment**  | Blue/Green Deployment er en metode for å gradvis bytte ut en applikasjon med en ny versjon, uten at det påvirker brukerne. Man lar en gruppe benytte den nye versjonen, og resten benytter den gamle - Hvis det ikke er noen problemer kan man fase ut den gamle helt, og hvis det er noen problemer kan alle brukerne gå over på den gamle til den nye er fikset |
 
 
 ### 1️⃣ Utfordringer med dagens systemutviklingsprosess
+_Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse disse? Hvilke DevOps prinsipper blir brutt?_
+Shopifly har en systemutviklingsprosess som ikke implementerer så mange DevOps-prinsipper. De har startet å implementere noen elementer ved å benytte Terraform og Docker, men bare fordi de har begynt å implementere noen verktøy betyr ikke det at de kjører “DevOps”.
+
+En av hovedpunktene i DevOps er at man samler utvikling og ops-avdelingen, til en DevOps-avdeling, der utviklerne holder i hele prosessen fra start til slutt - og opprettholdelse. Mye av denne prosessen kan - og bør - selvfølgelig automatiseres for å gjøre jobben bedre og enklere for alle.
+
+Det første punktet nevner at de kun deployer kode en gang i kvartalet - på en mandag. Ved å ha en fast dag med leveranse, og lang tid mellom hver gang, så kan man havne i situasjoner der essensiell funksjonalitet ikke får blitt med i leveransen på tre måneder, eller at dårlig kode blir liggende over lang tid. Det er også fare for å skape “crunch”-kultur, der man sitter mange, og lange, dager opp mot release for å rekke å gjøre ferdig alt. Det kan hende at andre team er avhengige av funksjonalitet for å kunne fortsette på sine arbeidsoppgaver, og det kan fort genereres waste av at man må vente i flere måneder på å kunne gå videre med noe.
+
+I punkt to nevnes det at man har ansatt et Test-team, og at ledelsen på utviklerteamet må godkjenne alle leveranser. Ved å ha et eget team som skal passe på at funksjonaliteten fungerer som den skal, mister utviklerteamet eierskap til eget produkt. Flowen i prosjektet blir oppstykket, og det kan ta lengre tid å få feedback. Manuell testing av løsninger er testløsningen som tar lengst tid av all form for testing, og generer da også mye waste i en løsning.
+
+Punkt tre nevner at de ruller tilbake hele løsningen hvis noe feiler. Med bakgrunn i at de kun deployer hver tredje måned, vil det være veldig mye funksjonalitet som blir fjernet ved en tilbakerulling av prosjektet. Det vil også være vanskelig å finne ut hvor feilen ligger, da det er mer kode å gå gjennom - og siden man benytter manuell testing må man også manuelt finne feilen.
+
+Det siste punktet tar opp problemet med at leveransen ikke er en del av utviklingspipelinen og gjøres manuelt av utviklerteamet. Her ser vi også at det er en egen ops-avdeling som tar seg av oppsett og opplastning av prosjektet manuelt.
+
+I Shopifly vil det være mange muligheter til å optimalisere systemutviklingsprosessen. De er en bedrift som har mye potensiale for å dra nytte av DevOps, og det skal ikke så mye til for å få dem i gang.
+
+I første runde bør de ta en titt på CI (Continuous Integration. Ved å automatisere mye av interne leveranser, kan man effektivisere arbeidsmåten, og leveranser vil gå fortere og gjerne være av høyere kvalitet. Man kan f.eks gå over til å lene seg mye på Github Actions. Ved å skrive gode integrasjonstester og unit-tester, kan man redusere mengden manuell testing og godkjenning av leveranser - som da gjør prosessen mer lean ved å redusere waste.
+
+Ved å benytte flere verktøy for å automatisere flowen, kan man ha færre overleveringer, da alle har tilgang på det siste automatisk. Ved å benytte Docker, Terraform, og en skyleverandør som AWS, kan man automatisere oppsett og drift av miljø, slik at alle jobber mot samme versjon og innhold av forskjellige programmer.
+
+En annen viktig ting vil være å gi utviklerne eierskap til hele pipelinen, ved å legge test- og ops-arbeidet over til dem. Testarbeidet vil være å lage gode tester for tjenesten - og når arbeidet først er gjort, og testene først er utviklet vil de passe på at koden alltid kjører som forventet. Det vil sannsynligvis være behov for en QA-avdeling, men arbeidet deres vil ikke lenger være å teste generisk funksjonalitet. Mye av arbeidet til Ops-avdelingen kan også automatiseres ved å ha egne pipelines som håndterer bygging og pushing til prod, slik at man ikke trenger manuell filhåndtering og overlevering.
+
+Når det kommer til tilbakerulling vil mye av arbeidet allerede være løst ved å ha hyppige leveranser og høy testdekning, men det er også mulig å legge til feature toggles - som gjør at man enkelt kan skru av og på funksjonalitet, slik at man slipper tilbakerulling hvis noe går galt. Det finnes også programmer som lar deg gradevis gå over til en ny versjon, ved å ha to (eller flere) løsninger kjørende samtidig, der en viss andel får tilgang til den gamle, og noen får tilgang til den nye. Når man ser at alt går fint, kan man fase ut den gamle helt - hvis ikke, kan man slå av den nye, fikse feilene, og prøve igjen - uten noe nedetid.
+
+Ved å ha en DevOps-avdeling kan man aktivt monitorere og fikse problemer før - under - og etter feilen har skjedd. Man kan sette opp alarmer som gjør at man blir obs på problemer øyeblikket det bryter ut, og man har selv mulighet til å gjøre noe med problemet.
+
 
 ### 2️⃣ Problemet med ferre utgivelser og mer kontroll
+_En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?_
+
+Poenget med DevOps er at man skal ha mye automasjon, eierskap til hele prosessen, og hyppig utvikling og deployment. Ved å bygge et rammeverk som baserer seg på DevOps-prinsipper, kan feil som oppstår bli håndtert raskt og effektivt - da hurtig implementering også betyr hurtig bug-fixing. En bedre tilnærming er å bygge en flow som gjør det enkelt å implementere ny funksjonalitet - og enkelt å fikse funksjonaliteten hvis problemer oppstår.
+
+Det er flere måter å implementere dette på - bl.a feature toggles som lar deg skru av og på funksjonalitet i en live kodebase, blue/green deployment for å passe på at den nye versjonen fungerer, og alarmer som sier ifra når noe går ned. Ved å lage et rammeverk som tar utgangspunkt i hvordan man håndterer feil - i steden for å lage rammeverk som baserer seg på at feil ikke skal skje - så reduserer man tidsbruk og waste før, under, og etter utvikling. Man får også en kultur der det er lov til å prøve og feile, og når feil først skjer så vet man hvordan man skal håndtere det på en effektiv måte.
 
 ### 3️⃣ Problemet med overlevering av kode
+_Teamet overleverer kode til en annen avdeling som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?_
+
+Poenget med DevOps er at Dev også skal drive med Ops - altså drifte koden man selv har skrevet. Fordelene med dette er at utviklerne står ansvarlig for koden de leverer, og hvis det oppstår problemer må de selv fikse det. Personen som skriver koden er sannsynligvis personen som kjenner koden best - og vil da kunne løse problemet raskere enn en annen person som har fått overlevert koden fra en annen. Målet med DevOps er også færrest mulige overleveringer, da hvert ledd involvert vil generere noe waste i overlevering av kode.
+
+Når feil først oppstår vil en utvikler ha muligheten til å fikse og forbedre koden, slik at det ikke oppstår igjen. Utvikleren har heller ingen mulighet til å skylde på seg selv hvis koden går ned, og man får et insentiv til å skrive god kode, slik at man ikke blir vekket av en alarm midt på natta.
 
 ### 4️⃣ Hvordan DevOps-prinsipper kan redusere risiko ved release
+_Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere eller fjerne risiko ved hyppige leveraner._
+
+Hyppig release av kode kan føre til alle de samme problemene som all release av kode har - og sannsynligvis vil det skje oftere. Dette kan også føre til at ny funksjonalitet muligens blir bygget på koden som inneholder feilene. Til gjengjeld kan hyppige releases gjøre at man oppdager problemene tidlig, og forhåpentligvis har mulighet til å gjøre endringer før koden er innviklet gjennom hele systemet.
 
 ## Del 2 - CI
 
@@ -39,7 +98,7 @@
 - [ ] På "Branch name pattern" skriver du inn "main" (navnet på branchen reglene gjelder for)
 - [ ] Huk av for "Require pull request reviews before merging"
 - [ ] Huk av for "Require status checks to pass before merging"
-![img_2.png](img_2.png)
+![img_2.png](readmeimg/img_2.png)
 
 ## Del 3 - Docker
 
@@ -51,7 +110,7 @@ For å få en workflow til å fungere med Dockerhub må man
 - [x] Gå inn på "actions"
 - [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_USERNAME, secret = \<ditt brukernavn på Dockerhub>
 - [x] Trykk på "new repository secret", legg inn name = DOCKER_HUB_TOKEN, secret = \<ditt passord på Dockerhub>
-![img_3.png](img_3.png)
+![img_3.png](readmeimg/img_3.png)
 
 ### Oppgave 2
 - [x] Lag en container for maven
@@ -66,8 +125,8 @@ For å få en workflow til å fungere med Dockerhub må man
 - [ ] Gå inn på "ECR"
 - [ ] Trykk på "Create repository"
 - [ ] Når ECR er opprettet, bytt ut path i docker.yml med repository-urlen til ECR - denne står under "View push commands" i ECR, eller i URI-feltet i ECR
-![img_1.png](img_1.png)
-![img.png](img.png)
+![img_1.png](readmeimg/img_1.png)
+![img.png](readmeimg/img.png)
 
 - [ ] Endre tag-navnet til noe passende.
 - [ ] Gå inn på "IAM"
@@ -115,6 +174,11 @@ Jeg har gjort dette ved å opprette en egen s3-bucket som heter "1027-terraform-
   - [x] Checkouts
   - [x] Latency
 - [x] Legg til alarm hvis antall handlekurver er over 5 over tre perioder på 5 minutter
+
+![img_4.png](readmeimg/img_4.png)
+---
+
+# OPPGAVE
 
 ## Krav til leveransen
 
